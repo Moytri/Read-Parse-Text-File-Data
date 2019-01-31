@@ -47,21 +47,10 @@ namespace COMP2614Assign03
 
         public decimal GST => TotalPrice * GST_RATE / 100.00m;
 
-        public decimal PST
-        {
-            get
-            {
-                return TaxPrices * PST_RATE / 100.00m;
-            }
-        }
+        public decimal PST => TaxPrices * PST_RATE / 100.00m;
 
-        public decimal Discount
-        {
-            get
-            {
-                return ParseTerm()[0] * TotalPrice / 100;
-            }
-        }
+        public decimal Discount => ParseTerm()[0] * TotalPrice / 100.00m;
+
         public int[] ParseTerm()
         {
             int [] intArray = Term.ToString().Select(c => Convert.ToInt32(c.ToString())).ToArray();
