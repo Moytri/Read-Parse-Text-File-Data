@@ -32,7 +32,7 @@ namespace COMP2614Assign03
             }
         }
 
-        public decimal TotalPrice
+        public decimal SubTotalPrice
         {
             get {
                 decimal totalPrice = 0.0m;
@@ -45,11 +45,11 @@ namespace COMP2614Assign03
             }
         }
 
-        public decimal GST => TotalPrice * GST_RATE / 100.00m;
+        public decimal GST => SubTotalPrice * GST_RATE / 100.00m;
 
         public decimal PST => TaxPrices * PST_RATE / 100.00m;
 
-        public decimal Discount => ParseTerm()[0] * TotalPrice / 100.00m;
+        public decimal Discount => ParseTerm()[0] * SubTotalPrice / 100.00m;
 
         public int[] ParseTerm()
         {
