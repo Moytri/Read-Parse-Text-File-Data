@@ -12,7 +12,7 @@ namespace COMP2614Assign03
         private const int GST_RATE = 5;
 
         public int InvoiceNumber { get; set; }
-        public DateTime InvoiceDate { get; set; }
+        public DateTime InvcDate { get; set; }
         public int Term { get; set; }
         public List<InvoiceDetails> InvoiceDetails { get; set; }
 
@@ -60,5 +60,8 @@ namespace COMP2614Assign03
             results[1] = int.Parse(intArray[1].ToString() + intArray[2].ToString());
             return results;
         }
+
+        public string InvoiceDate => InvcDate.ToString("MMM d, yyyy");
+        public string DiscountDate => InvcDate.AddDays(ParseTerm()[1]).ToString("MMM d, yyyy");
     }
 }

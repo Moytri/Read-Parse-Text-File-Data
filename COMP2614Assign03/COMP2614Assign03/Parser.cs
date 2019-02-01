@@ -20,7 +20,7 @@ namespace COMP2614Assign03
             while ((lineData = streamReader.ReadLine()) != null)
             {
                 string [] tokens = lineData.Split('|');
-                List<InvoiceDetails> invoiceDetails = ParseInvoiceDetail(tokens);
+                List<InvoiceDetails> invoiceDetails = ParseInvoiceDetails(tokens);
 
                 Invoice invoice = ParseInvoice(tokens[0], invoiceDetails);
                 invoices.Add(invoice);
@@ -35,13 +35,13 @@ namespace COMP2614Assign03
             return new Invoice
             {
                 InvoiceNumber = int.Parse(subTokens[0]),
-                InvoiceDate = DateTime.Parse(subTokens[1]),
+                InvcDate = DateTime.Parse(subTokens[1]),
                 Term = int.Parse(subTokens[2]),
                 InvoiceDetails = invoiceDetails
             };
         }
 
-        private static List<InvoiceDetails> ParseInvoiceDetail(string[] tokens)
+        private static List<InvoiceDetails> ParseInvoiceDetails(string[] tokens)
         {
             List<InvoiceDetails> invoiceDetails = new List<InvoiceDetails>();
             for(int i = 1; i < tokens.Length; i++)

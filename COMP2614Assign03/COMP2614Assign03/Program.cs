@@ -21,7 +21,11 @@ namespace COMP2614Assign03
 
         public static void Execute(String path)
         {
-            Parser.GetInvoices(path);
+            List<Invoice> invoices = Parser.GetInvoices(path);
+            Console.Title = "COMP2614 - Assignment 3 - A01062206";
+
+            Console.WriteLine("Invoice Listing");
+            InvoicePrinter.DisplayInvoice(invoices);
         }
     }
 }
