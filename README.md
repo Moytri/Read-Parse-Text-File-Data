@@ -21,17 +21,18 @@ The format of the file is described below. To keep the assignment from getting t
 Header Elements:
 InvoiceNumber:InvoiceDate:Terms
 3221409:2016/01/07:215
-InvoiceNumber: AlphaNumeric 8 character max
-InvoiceDate: YYYY/MM/DD
-Terms: three digits, first digit is discount percentage (maximum 9)
-second and third digit is discount period (minimum 10 days)
-110 means 1% discount 10 day period
+-InvoiceNumber: AlphaNumeric 8 character max
+-InvoiceDate: YYYY/MM/DD
+-Terms: three digits, first digit is discount percentage (maximum 9)
+-second and third digit is discount period (minimum 10 days)
+                          110 means 1% discount 10 day period
 
 Line Item Elements:
 Quantity:Sku:Description:Price:Taxable
 10:WD2002:2TB Hard Drive:121.66:N
-Quantity: 999 maximum value
-Sku: 8 characters maximum
-Description: 20 characters maximum
-Price: 2decimal places
-Taxable: Y or N to indicate that PST is payable on this line item
+
+-Quantity: 999 maximum value
+-Sku: 8 characters maximum
+-Description: 20 characters maximum
+-Price: 2decimal places
+-Taxable: Y or N to indicate that PST is payable on this line item
