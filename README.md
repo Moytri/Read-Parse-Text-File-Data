@@ -31,8 +31,12 @@ Quantity:Sku:Description:Price:Taxable
 
 110 means 1% discount 10 day period
 
--Quantity: 999 maximum value
--Sku: 8 characters maximum
--Description: 20 characters maximum
--Price: 2decimal places
--Taxable: Y or N to indicate that PST is payable on this line item
+Line Item Elements:
+Quantity:Sku:Description:Price:Taxable
+10:WD2002:2TB Hard Drive:121.66:N
+
+1) Quantity: 999 maximum value
+2) Sku: 8 characters maximum
+3) Description: 20 characters maximum
+4) Price: 2decimal places
+5) Taxable: Y or N to indicate that PST is payable on this line item
