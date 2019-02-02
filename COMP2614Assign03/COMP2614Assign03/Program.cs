@@ -16,15 +16,19 @@ namespace COMP2614Assign03
                 return;
             }
 
+            //Obtain file name via command line argument
             Execute(args[0]);
         }
 
         public static void Execute(String path)
         {
+            //parse the file to obtain a list of invoice 
             List<Invoice> invoices = Parser.GetInvoices(path);
-            Console.Title = "COMP2614 - Assignment 3 - A01062206";
 
+            Console.Title = "COMP2614 - Assignment 3 - A01062206";
             Console.WriteLine("Invoice Listing");
+
+            //print invoice
             InvoicePrinter.DisplayInvoice(invoices);
         }
     }

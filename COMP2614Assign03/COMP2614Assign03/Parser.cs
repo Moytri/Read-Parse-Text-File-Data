@@ -12,6 +12,7 @@ namespace COMP2614Assign03
         static StreamReader streamReader = null;
         static string lineData;
 
+        //break up each line of the file based on pipe (|) delimiter
         public static List<Invoice> GetInvoices(String path)
         {
             streamReader = new StreamReader(path);
@@ -28,6 +29,8 @@ namespace COMP2614Assign03
             return invoices;
         }
 
+        //Obtain Invoice (parameter: Header Item and IvoiceDetails) for per line of the file
+        //break up each string based on colon (:) delimiter
         private static Invoice ParseInvoice(string invoice, List<InvoiceDetails> invoiceDetails)
         {
             string[] subTokens = invoice.Split(':');
@@ -40,7 +43,7 @@ namespace COMP2614Assign03
                 InvoiceDetails = invoiceDetails
             };
         }
-
+ 
         private static List<InvoiceDetails> ParseInvoiceDetails(string[] tokens)
         {
             List<InvoiceDetails> invoiceDetails = new List<InvoiceDetails>();
@@ -53,7 +56,7 @@ namespace COMP2614Assign03
                     Quantity = int.Parse(subTokens[0]), //could use bool temp = int.TryParse(value, out myValue);
                     SKU = subTokens[1],
                     Description = subTokens[2],
-                    Price = Decimal.Parse(subTokens[3]), //could use bool temp = int.TryParse(value, out myValue);
+                    Price = decimal.Parse(subTokens[3]), 
                     IsTaxable = ToBoolean(subTokens[4])
                 });
 

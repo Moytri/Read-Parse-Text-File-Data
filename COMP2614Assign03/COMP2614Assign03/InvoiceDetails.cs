@@ -13,6 +13,7 @@ namespace COMP2614Assign03
         public string Description { get; set; }
         public decimal Price { get; set; }
         public bool IsTaxable { get; set; }
+
         public decimal ExtendedPrice
         {
             get
