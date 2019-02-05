@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP2614Assign03
 {
-    class InvoiceDetails
+    class InvoiceDetailLine
     {
         public int Quantity { get; set; }
         public string SKU { get; set; }

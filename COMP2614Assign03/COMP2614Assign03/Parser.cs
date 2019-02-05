@@ -21,7 +21,7 @@ namespace COMP2614Assign03
             while ((lineData = streamReader.ReadLine()) != null)
             {
                 string [] tokens = lineData.Split('|');
-                List<InvoiceDetails> invoiceDetails = ParseInvoiceDetails(tokens);
+                List<InvoiceDetailLine> invoiceDetails = ParseInvoiceDetails(tokens);
 
                 Invoice invoice = ParseInvoice(tokens[0], invoiceDetails);
                 invoices.Add(invoice);
@@ -31,7 +31,7 @@ namespace COMP2614Assign03
 
         //Obtain Invoice (parameter: Header Item and IvoiceDetails) for per line of the file
         //break up each string based on colon (:) delimiter
-        private static Invoice ParseInvoice(string invoice, List<InvoiceDetails> invoiceDetails)
+        private static Invoice ParseInvoice(string invoice, List<InvoiceDetailLine> invoiceDetails)
         {
             string[] subTokens = invoice.Split(':');
 
@@ -44,14 +44,14 @@ namespace COMP2614Assign03
             };
         }
  
-        private static List<InvoiceDetails> ParseInvoiceDetails(string[] tokens)
+        private static List<InvoiceDetailLine> ParseInvoiceDetails(string[] tokens)
         {
-            List<InvoiceDetails> invoiceDetails = new List<InvoiceDetails>();
+            List<InvoiceDetailLine> invoiceDetails = new List<InvoiceDetailLine>();
             for(int i = 1; i < tokens.Length; i++)
             {
                 string[] subTokens = tokens[i].Split(':');
 
-                invoiceDetails.Add(new InvoiceDetails
+                invoiceDetails.Add(new InvoiceDetailLine
                 {
                     Quantity = int.Parse(subTokens[0]), //could use bool temp = int.TryParse(value, out myValue);
                     SKU = subTokens[1],

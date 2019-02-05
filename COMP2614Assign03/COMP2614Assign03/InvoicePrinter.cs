@@ -26,11 +26,11 @@ namespace COMP2614Assign03
             }          
         }
 
-        private static void DisplayInvoiceDetails(List<InvoiceDetails> InvoiceDetails)
+        private static void DisplayInvoiceDetails(List<InvoiceDetailLine> InvoiceDetails)
         {
             Console.WriteLine($"{"Qty",-3}{" "}{"SKU",-14}{"Description",-22}{"Price",25}{"  "}{"PST",5}{"EXT",13}");
             Console.WriteLine(divider);
-            foreach (InvoiceDetails detail in InvoiceDetails)
+            foreach (InvoiceDetailLine detail in InvoiceDetails)
             {
                 Console.WriteLine($"{detail.Quantity,3}{" "}{detail.SKU,-14}{detail.Description,-22}{detail.Price,25}{"  "}{(detail.IsTaxable ? "Y" : "N"), 4}{detail.ExtendedPrice,13:N}");
             }

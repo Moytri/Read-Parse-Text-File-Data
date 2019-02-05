@@ -14,7 +14,7 @@ namespace COMP2614Assign03
         public int InvoiceNumber { get; set; }
         public DateTime InvcDate { get; set; }
         public int Term { get; set; }
-        public List<InvoiceDetails> InvoiceDetails { get; set; }
+        public List<InvoiceDetailLine> InvoiceDetails { get; set; }
 
         //Calculate price of taxable items
         public decimal TaxPrices
@@ -22,7 +22,7 @@ namespace COMP2614Assign03
             get
             {
                 decimal taxPrices = 0.0m;
-                foreach (InvoiceDetails details in InvoiceDetails)
+                foreach (InvoiceDetailLine details in InvoiceDetails)
                 {
                     if(details.IsTaxable)
                     {
@@ -38,7 +38,7 @@ namespace COMP2614Assign03
         {
             get {
                 decimal subTotalPrice = 0.0m;
-                foreach(InvoiceDetails details in InvoiceDetails)
+                foreach(InvoiceDetailLine details in InvoiceDetails)
                 {
                     subTotalPrice += details.ExtendedPrice;
                 }
@@ -58,7 +58,8 @@ namespace COMP2614Assign03
         //parse Term. e.g: parse 115 as arr[0] = 1, arr[1] = 15
         public int[] ParseTerm()
         {
-            int [] intArray = Term.ToString().Select(c => Convert.ToInt32(c.ToString())).ToArray();
+            //convert numeric string into int array
+            int[] intArray = Term.ToString().Select(c => Convert.ToInt32(c.ToString())).ToArray();
             var results = new int[2];
 
             results[0] = intArray[0];

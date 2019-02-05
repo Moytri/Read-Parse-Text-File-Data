@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Invoice.cs" />
-    <Compile Include="InvoiceDetails.cs" />
+    <Compile Include="InvoiceDetailLine.cs" />
     <Compile Include="InvoicePrinter.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Program.cs" />
